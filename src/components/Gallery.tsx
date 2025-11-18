@@ -80,10 +80,10 @@ export default function Gallery({ images }: GalleryProps) {
             {column.map((image) => (
               <div
                 key={image.id}
-                className="group relative cursor-pointer"
+                className="group cursor-pointer"
                 onClick={() => setSelectedImage(image)}
               >
-                <div className="relative bg-zinc-100 dark:bg-zinc-900 rounded-lg overflow-hidden">
+                <div className="relative bg-zinc-100 dark:bg-zinc-900 overflow-hidden">
                   <Image
                     src={`/gallery/${image.filename}`}
                     alt={image.title || image.filename}
@@ -93,15 +93,16 @@ export default function Gallery({ images }: GalleryProps) {
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   />
                   <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors" />
-                  {image.title && (
-                    <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
-                      <h3 className="text-white font-medium">{image.title}</h3>
-                      {image.date && (
-                        <p className="text-white/80 text-sm">{image.date}</p>
-                      )}
-                    </div>
-                  )}
                 </div>
+
+                {/* 간단한 메타 정보 */}
+                {(image.exif?.camera || image.date) && (
+                  <div className="mt-2 text-xs text-zinc-500 dark:text-zinc-400">
+                    {image.exif?.camera && <span>{image.exif.camera}</span>}
+                    {image.exif?.camera && image.date && <span> • </span>}
+                    {image.date && <span>{image.date}</span>}
+                  </div>
+                )}
               </div>
             ))}
           </div>

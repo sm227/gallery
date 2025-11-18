@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Gallery",
+  title: "Code Pixel",
   description: "My personal photography gallery",
 };
 
