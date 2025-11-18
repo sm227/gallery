@@ -85,7 +85,7 @@ export default function Gallery({ images }: GalleryProps) {
               >
                 <div className="relative bg-zinc-100 dark:bg-zinc-900 overflow-hidden">
                   <Image
-                    src={`/gallery/${image.filename}`}
+                    src={`/api/images/${image.filename}`}
                     alt={image.title || image.filename}
                     width={image.width || 800}
                     height={image.height || 600}

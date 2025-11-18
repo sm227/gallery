@@ -38,7 +38,7 @@ export async function POST(request: NextRequest) {
 
     const fileExtension = file.name.split('.').pop();
     const filename = `${uuidv4()}.${fileExtension}`;
-    const filepath = path.join(process.cwd(), 'public', 'gallery', filename);
+    const filepath = path.join(process.cwd(), 'uploads', filename);
 
     await writeFile(filepath, buffer);
 
@@ -76,7 +76,7 @@ export async function POST(request: NextRequest) {
     }
 
     // 메타데이터 업데이트
-    const jsonPath = path.join(process.cwd(), 'public', 'gallery', 'images.json');
+    const jsonPath = path.join(process.cwd(), 'uploads', 'images.json');
     let images = [];
 
     try {

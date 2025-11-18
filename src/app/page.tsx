@@ -8,8 +8,7 @@ async function getImages(): Promise<ImageData[]> {
   try {
     const filePath = path.join(
       process.cwd(),
-      "public",
-      "gallery",
+      "uploads",
       "images.json"
     );
     const fileContents = await fs.readFile(filePath, "utf8");

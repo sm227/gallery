@@ -63,7 +63,7 @@ export default function ImageModal({ image, onClose }: ImageModalProps) {
       >
         <div className="relative w-full h-[70vh] md:h-full md:max-h-[85vh]">
           <Image
-            src={`/gallery/${image.filename}`}
+            src={`/api/images/${image.filename}`}
             alt={image.title || image.filename}
             fill
             className="object-contain"
