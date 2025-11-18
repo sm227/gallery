@@ -92,6 +92,7 @@ export async function POST(request: NextRequest) {
       title: title || undefined,
       description: description || undefined,
       date: date || new Date().toISOString().split('T')[0],
+      uploadedAt: new Date().toISOString(),
       width,
       height,
       exif: exifData,
