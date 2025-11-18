@@ -54,8 +54,6 @@ export async function POST(request: NextRequest) {
         tiff: true,
         exif: true,
         gps: false,
-        ifd0: true,
-        ifd1: false,
       });
 
       if (exif) {
